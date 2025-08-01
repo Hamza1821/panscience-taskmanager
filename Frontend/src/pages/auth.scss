@@ -1,0 +1,450 @@
+// .auth-container {
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background: linear-gradient(135deg, #89f7fe, #66a6ff);
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//   padding: 2rem;
+
+//   h2 {
+//     margin-bottom: 1.5rem;
+//     color: #ffffff;
+//     text-align: center;
+//     font-size: 2rem;
+//     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+//   }
+
+//   form {
+//     backdrop-filter: blur(15px);
+//     background: rgba(255, 255, 255, 0.15);
+//     border-radius: 16px;
+//     padding: 2.5rem 2rem;
+//     width: 100%;
+//     max-width: 400px;
+//     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1.25rem;
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+
+//     input,
+//     select {
+//       padding: 0.75rem 1rem;
+//       border-radius: 8px;
+//       border: none;
+//       outline: none;
+//       background-color: rgba(255, 255, 255, 0.7);
+//       font-size: 1rem;
+//       color: #333;
+//       transition: all 0.3s ease;
+
+//       &:focus {
+//         box-shadow: 0 0 0 3px rgba(102, 166, 255, 0.4);
+//       }
+//     }
+
+//     select {
+//       appearance: none;
+//       background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23333'%20d='M2%200L0%202h4L2%200zM2%205l2-2H0l2%202z'/%3E");
+//       background-repeat: no-repeat;
+//       background-position: right 0.7rem center;
+//       background-size: 12px;
+//     }
+
+//     button {
+//       padding: 0.75rem;
+//       border: none;
+//       border-radius: 8px;
+//       background: linear-gradient(135deg, #667eea, #764ba2);
+//       color: white;
+//       font-weight: 600;
+//       font-size: 1rem;
+//       cursor: pointer;
+//       transition: background 0.3s;
+
+//       &:hover {
+//         background: linear-gradient(135deg, #5a67d8, #6b46c1);
+//         transform: translateY(-1px);
+//       }
+
+//       &:active {
+//         transform: scale(0.98);
+//       }
+//     }
+
+//     p {
+//       margin: 0;
+//       font-size: 0.9rem;
+//       text-align: center;
+//     }
+
+//     .error {
+//       color: #ff4d4f;
+//       font-size: 0.9rem;
+//       background: rgba(255, 0, 0, 0.1);
+//       border: 1px solid rgba(255, 0, 0, 0.2);
+//       padding: 0.5rem;
+//       border-radius: 6px;
+//     }
+//   }
+// }
+
+// /* Responsive adjustments */
+// @media (max-width: 500px) {
+//   .auth-container form {
+//     padding: 2rem 1.5rem;
+//   }
+
+//   .auth-container h2 {
+//     font-size: 1.6rem;
+//   }
+// }
+
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+// // --- Variables for easy customization ---
+// $primary-color: #007bff;
+// $secondary-color: #212529;
+// $accent-color: #17a2b8;
+// $text-color: #e0e0e0;
+// $background-dark: #1f2025;
+// $form-bg-rgba: rgba(255, 255, 255, 0.1);
+// $card-bg-rgba: rgba(255, 255, 255, 0.05);
+
+// // --- Global Styles ---
+// body, html, #root {
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   width: 100%;
+//   font-family: 'Inter', sans-serif;
+//   background: $background-dark;
+//   color: $text-color;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   overflow: hidden; // Prevents scrollbars from background animation
+// }
+
+// // --- Auth Container: The Glassy Card ---
+// .auth-container {
+//   position: relative;
+//   width: 90%;
+//   max-width: 400px;
+//   padding: 2.5rem;
+//   background: $card-bg-rgba;
+//   backdrop-filter: blur(10px);
+//   -webkit-backdrop-filter: blur(10px);
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+//   border-radius: 20px;
+//   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+//   text-align: center;
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+//   &:hover {
+//     transform: translateY(-5px);
+//     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+//   }
+
+//   h2 {
+//     font-size: 2.5rem;
+//     color: white;
+//     margin-bottom: 2rem;
+//     letter-spacing: 1px;
+//     font-weight: 700;
+//   }
+// }
+
+// // --- Form and Input Styles ---
+// form {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 2rem;
+//   gap: 1.5rem;
+// }
+
+// input, select {
+//   width: 100%;
+//   padding: 0.9rem 1.2rem;
+//   font-size: 1rem;
+//   background: $form-bg-rgba;
+//   border: 1px solid rgba(255, 255, 255, 0.2);
+//   border-radius: 12px;
+//   color: $text-color;
+//   outline: none;
+//   transition: all 0.3s ease;
+
+//   &::placeholder {
+//     color: rgba(255, 255, 255, 0.6);
+//   }
+
+//   &:focus {
+//     border-color: $accent-color;
+//     box-shadow: 0 0 0 3px rgba($accent-color, 0.3);
+//   }
+// }
+
+// select {
+//   // Styling for the dropdown arrow to make it blend with the theme
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+//   appearance: none;
+//   background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+//   background-repeat: no-repeat;
+//   background-position: right 1rem center;
+//   background-size: 1em;
+// }
+
+// // --- Submit Button: The Marvellous Creative Element ---
+// button[type="submit"] {
+//   width: 100%;
+//   padding: 1rem;
+//   font-size: 1.1rem;
+//   font-weight: 600;
+//   color: white;
+//   background-image: linear-gradient(135deg, $primary-color 0%, $accent-color 100%);
+//   border: none;
+//   border-radius: 12px;
+//   cursor: pointer;
+//   box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+//   transition: all 0.3s ease;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//     box-shadow: 0 6px 20px rgba($primary-color, 0.4);
+//     background-image: linear-gradient(135deg, darken($primary-color, 5%) 0%, darken($accent-color, 5%) 100%);
+//   }
+
+//   &:active {
+//     transform: translateY(0);
+//     box-shadow: 0 2px 10px rgba($primary-color, 0.3);
+//   }
+// }
+
+// // --- Error Message Style ---
+// p {
+//   color: #ff6b6b; // A vibrant red for errors
+//   background: rgba(255, 107, 107, 0.1);
+//   border-radius: 8px;
+//   padding: 0.8rem;
+//   margin-top: -0.5rem;
+//   margin-bottom: 1.5rem;
+//   border: 1px solid #ff6b6b;
+//   font-weight: 600;
+// }
+
+// // --- Responsive Adjustments ---
+// @media (max-width: 500px) {
+//   .auth-container {
+//     padding: 2rem 1.5rem;
+//     width: 95%;
+//   }
+
+//   h2 {
+//     font-size: 2rem;
+//   }
+// }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+// --- Variables for easy customization ---
+$primary-color: #007bff;
+$secondary-color: #212529;
+$accent-color: #17a2b8;
+$text-color: #e0e0e0;
+$background-dark: #1f2025;
+// Increased transparency for a more glassy look
+$form-bg-rgba: rgba(255, 255, 255, 0.05);
+$card-bg-rgba: rgba(255, 255, 255, 0.03);
+
+// --- Global Styles ---
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: $background-dark;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; // Prevents scrollbars from background animation
+}
+
+// --- Auth Container: The Glassy Card ---
+.auth-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  padding: 2.5rem;
+  background: $card-bg-rgba;
+  backdrop-filter: blur(15px); // Increased blur for a frosted look
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3); // Adjusted shadow to be more subtle
+  text-align: center;
+  overflow: hidden; // Crucial for containing the glowing pseudo-elements
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.4);
+  }
+
+  // Pseudo-element for a glowing, light-dispersion effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba($primary-color, 0.7), transparent 70%);
+    z-index: -1;
+    animation: light-move-1 10s infinite alternate ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba($accent-color, 0.7), transparent 70%);
+    z-index: -1;
+    animation: light-move-2 12s infinite alternate ease-in-out;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+}
+
+// --- Form and Input Styles ---
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  background: $form-bg-rgba;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: $text-color;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box; // Ensures width includes padding and border
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus {
+    border-color: $accent-color;
+    box-shadow: 0 0 0 3px rgba($accent-color, 0.3);
+  }
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+// --- Submit Button: The Marvellous Creative Element ---
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-image: linear-gradient(135deg, $primary-color 0%, $accent-color 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+  transition: all 0.3s ease;
+  box-sizing: border-box; // Ensures width includes padding and border
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($primary-color, 0.4);
+    background-image: linear-gradient(135deg, darken($primary-color, 5%) 0%, darken($accent-color, 5%) 100%);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba($primary-color, 0.3);
+  }
+}
+
+// --- Error Message Style ---
+p {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ff6b6b;
+  font-weight: 600;
+}
+
+// --- Animations for the glowing light effect ---
+@keyframes light-move-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 30px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes light-move-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -20px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+
+// --- Responsive Adjustments ---
+@media (max-width: 500px) {
+  .auth-container {
+    padding: 2rem 1.5rem;
+    width: 95%;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.auth-redirect {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

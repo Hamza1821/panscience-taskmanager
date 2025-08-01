@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+// --- Color Variables ---
+$primary-color: #007bff;
+$accent-color: #17a2b8;
+$text-color: #f0f0f0;
+$background-dark: #0c0f18;
+$card-bg-rgba: rgba(30, 30, 30, 0.6);
+$tab-bg-rgba: rgba(40, 40, 40, 0.4);
+
+// --- Dashboard Container ---
+.admin-dashboard {
+  font-family: 'Inter', sans-serif;
+  color: $text-color;
+  background: $background-dark;
+  min-height: 1vh;
+  height: 100%;
+  overflow-y: scroll;
+
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+// --- Heading ---
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 12px rgba($primary-color, 0.5);
+  margin: 0.5rem 0 1.2rem;
+}
+
+// --- Tab Buttons ---
+.tab-controls {
+  display: flex;
+  justify-content: center;
+//   gap: 1rem;
+  background: $tab-bg-rgba;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  width: 100%;
+
+  button {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-color;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      background: linear-gradient(45deg, $primary-color, $accent-color);
+      color: white;
+      box-shadow: 0 3px 10px rgba($primary-color, 0.4);
+    }
+  }
+}
+
+// --- Tab Body Container ---
+.tab-content {
+  width: 95%;
+  max-width: 1200px;
+  background: $card-bg-rgba;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+}
+
+// --- Tables ---
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+thead {
+  th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+tbody {
+  tr {
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: $text-color;
+    font-size: 0.88rem;
+
+    &:last-child {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+    }
+  }
+}
+
+// --- Buttons ---
+.action-button {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.edit {
+    background-color: yellow;
+    color: white;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+
+  &.delete {
+    background-color: #e92f2f;
+    color: white;
+
+    &:hover {
+      background-color: darken(#ff4d4d, 10%);
+    }
+  }
+}
