@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
-  withCredentials: true, // use true if backend sends cookies
+  baseURL: 'https://panscience-taskmanager.onrender.com/api',
+  withCredentials: true, // keep if you're using cookies (else remove)
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
+
+// Attach token from localStorage if available
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -14,6 +16,5 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-
 
 export default api;
