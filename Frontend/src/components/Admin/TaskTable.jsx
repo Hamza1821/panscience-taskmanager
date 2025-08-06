@@ -73,7 +73,7 @@ function TaskTable() {
                         {task.documents.map((doc, i) => (
                           <li key={i}>
                             <a
-                              href={`http://localhost:5000/uploads/${doc}`}
+                              href={`${window.location.origin}/uploads/${doc}`}
                               target="_blank"
                               rel="noreferrer"
                             >

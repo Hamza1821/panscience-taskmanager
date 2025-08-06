@@ -42,6 +42,13 @@ function TaskList() {
             <p>Status: {task.status}</p>
             <p>Priority: {task.priority}</p>
             <p>Due Date: {task.dueDate?.split('T')[0]}</p>
+            <a
+                href={`${window.location.origin}/uploads/${doc}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                File {i + 1}
+            </a>
 
             <div className="task-actions">
               <Link to={`/edit/${task._id}`} className="edit-btn">✏️ Edit</Link>
