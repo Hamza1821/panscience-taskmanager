@@ -73,11 +73,7 @@ function TaskTable() {
                       <ul>
                         {task.documents.map((doc, i) => (
                           <li key={i}>
-                           <a
-                            href={`${window.location.origin}/uploads/${doc}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                          <a href={`https://panscience-taskmanager.onrender.com/uploads/${doc}`} target="_blank">
                             File {i + 1}
                           </a>
 

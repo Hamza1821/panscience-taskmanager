@@ -47,13 +47,9 @@ function TaskList() {
             }
             {task.documents.map((doc, i) => (
                           <li key={i}>
-                            <a
-                              href={`${window.location.origin}/uploads/${doc}`}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              File {i + 1}
-                            </a>
+                            <a href={`https://panscience-taskmanager.onrender.com/uploads/${doc}`} target="_blank">
+                            File {i + 1}
+                          </a>
 
                           </li>
                         ))}
