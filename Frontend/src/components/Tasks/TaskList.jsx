@@ -47,7 +47,13 @@ function TaskList() {
             }
             {task.documents.map((doc, i) => (
                           <li key={i}>
-                            <Link to={`${window.location.origin}/uploads/${doc}`} > File {i+1}</Link>
+                            <a
+                              href={`${window.location.origin}/uploads/${doc}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              File {i + 1}
+                            </a>
 
                           </li>
                         ))}
