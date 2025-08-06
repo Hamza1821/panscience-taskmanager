@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import api from '../services/api';
 import './auth.scss';
 
@@ -14,9 +14,8 @@ function Register() {
     e.preventDefault();
     setError('');
 
-
     try {
-      const response= await api.post('/auth/register', { email, password, role });
+      const response = await api.post('/auth/register', { email, password, role });
       if (response.status === 201) {
         alert('Registration successful! Please log in.');
         navigate('/login');
@@ -54,6 +53,11 @@ function Register() {
 
         <button type="submit">Register</button>
       </form>
+
+      {/* ✅ Add this */}
+      <p style={{ marginTop: '10px' }}>
+        Already registered? <Link to="/login">Login here</Link>
+      </p>
     </div>
   );
 }
