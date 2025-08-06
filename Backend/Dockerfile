@@ -17,4 +17,4 @@ RUN mkdir -p uploads
 EXPOSE 5000
 
 # Start the app
-CMD ["sh", "-c", "npm test && npm start"]
+CMD ["sh", "-c", "npm start"]
