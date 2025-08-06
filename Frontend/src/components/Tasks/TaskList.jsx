@@ -42,23 +42,15 @@ function TaskList() {
             <p>Status: {task.status}</p>
             <p>Priority: {task.priority}</p>
             <p>Due Date: {task.dueDate?.split('T')[0]}</p>
-            <button
-                onClick={() =>
-                  window.open(`${window.location.origin}/uploads/${doc}`, '_blank')
-                }
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'blue',
-                  textDecoration: 'underline',
-                  cursor: 'pointer',
-                  padding: 0,
-                  font: 'inherit',
-                }}
-              >
-                File {i + 1}
-              </button>
+            {
+              //use link instead of <a> for internal navigation
+            }
+            {task.documents.map((doc, i) => (
+                          <li key={i}>
+                            <Link to={`${window.location.origin}/uploads/${doc}`} > File {i+1}</Link>
 
+                          </li>
+                        ))}
 
             <div className="task-actions">
               <Link to={`/edit/${task._id}`} className="edit-btn">✏️ Edit</Link>
