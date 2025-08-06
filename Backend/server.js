@@ -6,7 +6,7 @@ dotenv.config();
 import cors from 'cors';
 
 app.use(cors({
-  origin: 'http://localhost:5173', // your frontend origin
+  origin: "https://panscience-taskmanager-1.onrender.com", // your frontend origin
   credentials: true
 }));
 

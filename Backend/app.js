@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',  // Adjust this to your frontend's URL
+  origin: 'https://panscience-taskmanager-1.onrender.com',  // Adjust this to your frontend's URL
   credentials: true
 }));
 app.use('/uploads', express.static(path.resolve('uploads')));
