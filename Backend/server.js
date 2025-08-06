@@ -6,7 +6,7 @@ dotenv.config();
 import cors from 'cors';
 
 app.use(cors({
-  origin: "https://panscience-taskmanager-1.onrender.com", // your frontend origin
+  origin: ['https://panscience-taskmanager-1.onrender.com','https://taskmanager-ps.netlify.app'],  // Adjust this to your frontend's URL
   credentials: true
 }));
 
