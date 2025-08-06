@@ -72,13 +72,23 @@ function TaskTable() {
                       <ul>
                         {task.documents.map((doc, i) => (
                           <li key={i}>
-                            <a
-                              href={`${window.location.origin}/uploads/${doc}`}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              File {i + 1}
-                            </a>
+                            <button
+                                onClick={() =>
+                                  window.open(`${window.location.origin}/uploads/${doc}`, '_blank')
+                                }
+                                style={{
+                                  background: 'none',
+                                  border: 'none',
+                                  color: 'blue',
+                                  textDecoration: 'underline',
+                                  cursor: 'pointer',
+                                  padding: 0,
+                                  font: 'inherit',
+                                }}
+                              >
+                                File {i + 1}
+                              </button>
+
                           </li>
                         ))}
                       </ul>
